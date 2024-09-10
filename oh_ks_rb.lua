@@ -941,6 +941,8 @@ function iniciarJuego()
 		game:GetService("ReplicatedStorage").Package.Events.ta:InvokeServer()
 	end
 	task.wait()
+
+		player
 end
 
 function noTierraID()
@@ -1587,6 +1589,20 @@ function iniciarJuego()
 		game:GetService("ReplicatedStorage").Package.Events.ta:InvokeServer()
 	end
 	task.wait()
+    player.CharacterAdded:Connect(function(c)
+        c:WaitForChild("Humanoid")
+        c.Humanoid.Died:Connect(function()
+            if data.Strength.Value>=8000000 then
+                wait(5)
+                game:GetService("ReplicatedStorage").Package.Events.equipskill:InvokeServer("Godly SSJ2")
+                game:GetService("ReplicatedStorage").Package.Events.ta:InvokeServer()
+            else
+                wait(4.95)
+                game:GetService("ReplicatedStorage").Package.Events.equipskill:InvokeServer("Mystic")
+                game:GetService("ReplicatedStorage").Package.Events.ta:InvokeServer()
+            end
+        end)
+    end)
 end
 
 function noTierraID()
