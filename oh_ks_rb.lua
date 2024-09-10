@@ -1,6 +1,6 @@
 -- Gui to Lua
 -- Version: 3.2
-
+print("edited by KamiSlayer_Sama/1sk1_Fedeyan")
 -- Instances:
 local player = game.Players.LocalPlayer
 local ScreenGui = Instance.new("ScreenGui")
